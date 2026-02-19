@@ -6,7 +6,7 @@ BEGIN:VEVENT
 SUMMARY:AAAI 2026 – Deadline (CCF-A)
 DTSTART:20250802T115959Z
 DTEND:20250802T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:aaai26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: AAAI (AAAI Conference on Artificial Intelligence)\
  nCategory: Machine Learning (ML)\nCCF Rank: A\nYear: 2026\nConference Date
@@ -30,7 +30,7 @@ BEGIN:VEVENT
 SUMMARY:AAAI 2026 – Abstract Due (CCF-A)
 DTSTART:20250726T115959Z
 DTEND:20250726T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:aaai26-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: AAAI (AAAI Conference on Artificial Intelligence)\
  nCategory: Machine Learning (ML)\nCCF Rank: A\nYear: 2026\nConference Date
@@ -54,7 +54,7 @@ BEGIN:VEVENT
 SUMMARY:AAMAS 2026 – Deadline (CCF-B)
 DTSTART:20251009T115959Z
 DTEND:20251009T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:aamas26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: AAMAS (International Conference on Autonomous Agen
  ts and Multiagent Systems)\nCategory: Machine Learning (ML)\nCCF Rank: B\n
@@ -78,7 +78,7 @@ BEGIN:VEVENT
 SUMMARY:AAMAS 2026 – Abstract Due (CCF-B)
 DTSTART:20251002T115959Z
 DTEND:20251002T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:aamas26-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: AAMAS (International Conference on Autonomous Agen
  ts and Multiagent Systems)\nCategory: Machine Learning (ML)\nCCF Rank: B\n
@@ -102,7 +102,7 @@ BEGIN:VEVENT
 SUMMARY:ACL 2026 – Deadline (CCF-A)
 DTSTART:20260106T115959Z
 DTEND:20260106T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:acl26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ACL (Annual Meeting of the Association for Computa
  tional Linguistics)\nCategory: Natural Language Processing (NLP)\nCCF Rank
@@ -126,7 +126,7 @@ BEGIN:VEVENT
 SUMMARY:AISTATS 2026 – Deadline (CCF-C)
 DTSTART:20251003T115959Z
 DTEND:20251003T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:aistats26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: AISTATS (International Conference on Artificial In
  telligence and Statistics)\nCategory: Machine Learning (ML)\nCCF Rank: C\n
@@ -150,7 +150,7 @@ BEGIN:VEVENT
 SUMMARY:AISTATS 2026 – Abstract Due (CCF-C)
 DTSTART:20250926T115959Z
 DTEND:20250926T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:aistats26-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: AISTATS (International Conference on Artificial In
  telligence and Statistics)\nCategory: Machine Learning (ML)\nCCF Rank: C\n
@@ -174,7 +174,7 @@ BEGIN:VEVENT
 SUMMARY:ALT 2026 – Deadline (CCF-C)
 DTSTART:20251002T095959Z
 DTEND:20251002T105959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:alt2026-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ALT (International Conference on Algorithmic Learn
  ing Theory)\nCategory: Machine Learning (ML)\nCCF Rank: C\nYear: 2026\nCon
@@ -198,7 +198,7 @@ BEGIN:VEVENT
 SUMMARY:COLM 2026 – Deadline
 DTSTART:20260401T115959Z
 DTEND:20260401T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:colm26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: COLM (Conference on Language Modeling)\nCategory: 
  Machine Learning (ML)\nCCF Rank: N\nYear: 2026\nConference Date: October 6
@@ -221,7 +221,7 @@ BEGIN:VEVENT
 SUMMARY:COLM 2026 – Abstract Due
 DTSTART:20260327T115959Z
 DTEND:20260327T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:colm26-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: COLM (Conference on Language Modeling)\nCategory: 
  Machine Learning (ML)\nCCF Rank: N\nYear: 2026\nConference Date: October 6
@@ -244,7 +244,7 @@ BEGIN:VEVENT
 SUMMARY:CoNLL 2026 – Deadline (CCF-C)
 DTSTART:20260220T115959Z
 DTEND:20260220T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:conll26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: CoNLL (Conference on Computational Natural Languag
  e Learning)\nCategory: Natural Language Processing (NLP)\nCCF Rank: C\nYea
@@ -268,7 +268,7 @@ BEGIN:VEVENT
 SUMMARY:CPAL 2026 – Deadline
 DTSTART:20251206T115959Z
 DTEND:20251206T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:cpal26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: CPAL (The Conference on Parsimony and Learning)\nC
  ategory: Machine Learning (ML)\nCCF Rank: N\nYear: 2026\nConference Date: 
@@ -291,7 +291,7 @@ BEGIN:VEVENT
 SUMMARY:EACL 2026 – Deadline
 DTSTART:20251007T115959Z
 DTEND:20251007T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:eacl26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: EACL (The Annual Conference of the European Chapte
  r of the Association for Computational Linguistics)\nCategory: Natural Lan
@@ -315,7 +315,7 @@ BEGIN:VEVENT
 SUMMARY:ESANN 2026 – Deadline
 DTSTART:20251120T075959Z
 DTEND:20251120T085959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:esann26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ESANN (European Symposium on Artificial Neural Net
  works\, Computational Intelligence and Machine Learning)\nCategory: Machin
@@ -340,7 +340,7 @@ SUMMARY:GECCO 2026 – Deadline (CCF-C) [Full papers (traditional category
  ) ]
 DTSTART:20260127T115900Z
 DTEND:20260127T125900Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:gecco26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: GECCO (Genetic and Evolutionary Computation Confer
  ence)\nCategory: Machine Learning (ML)\nCCF Rank: C\nYear: 2026\nConferenc
@@ -365,7 +365,7 @@ SUMMARY:GECCO 2026 – Abstract Due (CCF-C) [Full papers (traditional cate
  gory) ]
 DTSTART:20260120T115900Z
 DTEND:20260120T125900Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:gecco26-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: GECCO (Genetic and Evolutionary Computation Confer
  ence)\nCategory: Machine Learning (ML)\nCCF Rank: C\nYear: 2026\nConferenc
@@ -389,7 +389,7 @@ BEGIN:VEVENT
 SUMMARY:GECCO 2026 – Deadline (CCF-C) [Poster-only papers ]
 DTSTART:20260127T115900Z
 DTEND:20260127T125900Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:gecco26-deadline-1@ccf-deadlines
 DESCRIPTION:Conference: GECCO (Genetic and Evolutionary Computation Confer
  ence)\nCategory: Machine Learning (ML)\nCCF Rank: C\nYear: 2026\nConferenc
@@ -413,7 +413,7 @@ BEGIN:VEVENT
 SUMMARY:ICANN 2026 – Deadline (CCF-C)
 DTSTART:20260317T115959Z
 DTEND:20260317T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:icann2026-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ICANN (International Conference on Artificial Neur
  al Networks)\nCategory: Machine Learning (ML)\nCCF Rank: C\nYear: 2026\nCo
@@ -438,7 +438,7 @@ BEGIN:VEVENT
 SUMMARY:ICCBR 2026 – Deadline (CCF-B)
 DTSTART:20260321T115959Z
 DTEND:20260321T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:iccbr2026-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ICCBR (International Conference on Case-Based Reas
  oning)\nCategory: Knowledge Representation (KR)\nCCF Rank: B\nYear: 2026\n
@@ -461,7 +461,7 @@ BEGIN:VEVENT
 SUMMARY:ICDAR 2026 – Deadline (CCF-C)
 DTSTART:20260227T235959Z
 DTEND:20260228T005959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:icdar2026-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ICDAR (International Conference on Document Analys
  is and Recognition)\nCategory: Machine Learning (ML)\nCCF Rank: C\nYear: 2
@@ -485,7 +485,7 @@ BEGIN:VEVENT
 SUMMARY:ICDAR 2026 – Abstract Due (CCF-C)
 DTSTART:20260213T235959Z
 DTEND:20260214T005959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:icdar2026-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: ICDAR (International Conference on Document Analys
  is and Recognition)\nCategory: Machine Learning (ML)\nCCF Rank: C\nYear: 2
@@ -509,7 +509,7 @@ BEGIN:VEVENT
 SUMMARY:ICLR 2026 – Deadline
 DTSTART:20250925T115959Z
 DTEND:20250925T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:iclr26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ICLR (International Conference on Learning Represe
  ntations)\nCategory: Machine Learning (ML)\nCCF Rank: N\nYear: 2026\nConfe
@@ -532,7 +532,7 @@ BEGIN:VEVENT
 SUMMARY:ICLR 2026 – Abstract Due
 DTSTART:20250920T115959Z
 DTEND:20250920T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:iclr26-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: ICLR (International Conference on Learning Represe
  ntations)\nCategory: Machine Learning (ML)\nCCF Rank: N\nYear: 2026\nConfe
@@ -556,7 +556,7 @@ SUMMARY:ICML 2026 – Deadline (CCF-A) [Paper Submissions Open on OpenRevi
  ew Jan 08 2026 12:00AM UTC-0]
 DTSTART:20260129T115959Z
 DTEND:20260129T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:icml26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ICML (International Conference on Machine Learning
  )\nCategory: Machine Learning (ML)\nCCF Rank: A\nYear: 2026\nConference Da
@@ -581,7 +581,7 @@ SUMMARY:ICML 2026 – Abstract Due (CCF-A) [Paper Submissions Open on Open
  Review Jan 08 2026 12:00AM UTC-0]
 DTSTART:20260124T115959Z
 DTEND:20260124T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:icml26-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: ICML (International Conference on Machine Learning
  )\nCategory: Machine Learning (ML)\nCCF Rank: A\nYear: 2026\nConference Da
@@ -605,7 +605,7 @@ BEGIN:VEVENT
 SUMMARY:IJCAI 2026 – Deadline (CCF-A)
 DTSTART:20260120T115959Z
 DTEND:20260120T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:ijcai26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: IJCAI (International Joint Conference on Artificia
  l Intelligence)\nCategory: Machine Learning (ML)\nCCF Rank: A\nYear: 2026\
@@ -629,7 +629,7 @@ BEGIN:VEVENT
 SUMMARY:IJCAI 2026 – Abstract Due (CCF-A)
 DTSTART:20260113T115959Z
 DTEND:20260113T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:ijcai26-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: IJCAI (International Joint Conference on Artificia
  l Intelligence)\nCategory: Machine Learning (ML)\nCCF Rank: A\nYear: 2026\
@@ -653,7 +653,7 @@ BEGIN:VEVENT
 SUMMARY:IJCB 2026 – Deadline (CCF-C)
 DTSTART:20260411T115959Z
 DTEND:20260411T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:ijcb2026-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: IJCB (International Joint Conference on Biometrics
  )\nCategory: Machine Learning (ML)\nCCF Rank: C\nYear: 2026\nConference Da
@@ -676,7 +676,7 @@ BEGIN:VEVENT
 SUMMARY:IJCNN 2026 – Deadline (CCF-C)
 DTSTART:20260201T115959Z
 DTEND:20260201T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:ijcnn2026-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: IJCNN (International Joint Conference on Neural Ne
  tworks)\nCategory: Machine Learning (ML)\nCCF Rank: C\nYear: 2026\nConfere
@@ -701,7 +701,7 @@ BEGIN:VEVENT
 SUMMARY:KR 2026 – Deadline (CCF-B)
 DTSTART:20260214T115959Z
 DTEND:20260214T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:krd26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: KR (International Conference on Principles of Know
  ledge Representation and Reasoning)\nCategory: Knowledge Representation (K
@@ -725,7 +725,7 @@ BEGIN:VEVENT
 SUMMARY:KR 2026 – Abstract Due (CCF-B)
 DTSTART:20260209T115959Z
 DTEND:20260209T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:krd26-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: KR (International Conference on Principles of Know
  ledge Representation and Reasoning)\nCategory: Knowledge Representation (K
@@ -749,7 +749,7 @@ BEGIN:VEVENT
 SUMMARY:KSEM 2026 – Deadline (CCF-C)
 DTSTART:20260115T235959Z
 DTEND:20260116T005959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:ksem26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: KSEM (International Conference on Knowledge Scienc
  e\, Engineering and Management)\nCategory: Machine Learning (ML)\nCCF Rank
@@ -770,10 +770,34 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:NeurIPS 2026 – Deadline (CCF-A)
+DTSTART:20260507T115900Z
+DTEND:20260507T125900Z
+DTSTAMP:20260219T171851Z
+UID:nips26-deadline-0@ccf-deadlines
+DESCRIPTION:Conference: NeurIPS (Conference on Neural Information Processi
+ ng Systems)\nCategory: Machine Learning (ML)\nCCF Rank: A\nYear: 2026\nCon
+ ference Date: December 6\, 2026\nPlace: Sydney\, Australia\nTimezone: UTC+
+ 0\nWebsite: https://neurips.cc/Conferences/2026\nDBLP: https://dblp.org/db
+ /conf/nips
+LOCATION:Sydney\, Australia
+URL:https://neurips.cc/Conferences/2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:NeurIPS 2026 Deadline in 1 week
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:NeurIPS 2026 Deadline tomorrow!
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:PPSN 2026 – Deadline (CCF-B)
 DTSTART:20260329T115959Z
 DTEND:20260329T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:ppsn26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: PPSN (International Conference on Parallel Problem
   Solving From Nature)\nCategory: Machine Learning (ML)\nCCF Rank: B\nYear:
@@ -797,7 +821,7 @@ BEGIN:VEVENT
 SUMMARY:ProbML 2026 – Deadline
 DTSTART:20260320T235900Z
 DTEND:20260321T005900Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:probml2026-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ProbML (Symposium on Probabilistic Machine Learnin
  g)\nCategory: Machine Learning (ML)\nCCF Rank: N\nYear: 2026\nConference D
@@ -820,7 +844,7 @@ BEGIN:VEVENT
 SUMMARY:RuleML+RR 2026 – Deadline
 DTSTART:20260516T115959Z
 DTEND:20260516T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:rulemlrr2026-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: RuleML+RR (International Joint Conference on Rules
   and Reasoning)\nCategory: Knowledge Representation (KR)\nCCF Rank: N\nYea
@@ -844,7 +868,7 @@ BEGIN:VEVENT
 SUMMARY:RuleML+RR 2026 – Abstract Due
 DTSTART:20260509T115959Z
 DTEND:20260509T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:rulemlrr2026-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: RuleML+RR (International Joint Conference on Rules
   and Reasoning)\nCategory: Knowledge Representation (KR)\nCCF Rank: N\nYea
@@ -868,7 +892,7 @@ BEGIN:VEVENT
 SUMMARY:UAI 2026 – Deadline (CCF-B)
 DTSTART:20260226T115959Z
 DTEND:20260226T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:uai26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: UAI (Conference on Uncertainty in Artificial Intel
  ligence)\nCategory: Machine Learning (ML)\nCCF Rank: B\nYear: 2026\nConfer
@@ -892,7 +916,7 @@ BEGIN:VEVENT
 SUMMARY:ISWC 2026 – Deadline (CCF-B)
 DTSTART:20260508T115959Z
 DTEND:20260508T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:iswc26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ISWC (International Semantic Web Conference)\nCate
  gory: Knowledge Representation (KR)\nCCF Rank: B\nYear: 2026\nConference D
@@ -915,7 +939,7 @@ BEGIN:VEVENT
 SUMMARY:ISWC 2026 – Abstract Due (CCF-B)
 DTSTART:20260503T115959Z
 DTEND:20260503T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:iswc26-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: ISWC (International Semantic Web Conference)\nCate
  gory: Knowledge Representation (KR)\nCCF Rank: B\nYear: 2026\nConference D
@@ -938,7 +962,7 @@ BEGIN:VEVENT
 SUMMARY:ECML-PKDD 2026 – Deadline (CCF-B)
 DTSTART:20260313T115959Z
 DTEND:20260313T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:ecmlpkdd2026-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: ECML-PKDD (European Conference on Machine Learning
   and 25th Principles and Practice of Knowledge Discovery in Databases)\nCa
@@ -962,7 +986,7 @@ BEGIN:VEVENT
 SUMMARY:ECML-PKDD 2026 – Abstract Due (CCF-B)
 DTSTART:20260306T115959Z
 DTEND:20260306T125959Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:ecmlpkdd2026-abstract-due-0@ccf-deadlines
 DESCRIPTION:Conference: ECML-PKDD (European Conference on Machine Learning
   and 25th Principles and Practice of Knowledge Discovery in Databases)\nCa
@@ -986,7 +1010,7 @@ BEGIN:VEVENT
 SUMMARY:MLSys 2026 – Deadline
 DTSTART:20251031T080000Z
 DTEND:20251031T090000Z
-DTSTAMP:20260217T103229Z
+DTSTAMP:20260219T171851Z
 UID:mlsys26-deadline-0@ccf-deadlines
 DESCRIPTION:Conference: MLSys (Conference on Machine Learning and Systems)
  \nCategory: Machine Learning (ML)\nCCF Rank: N\nYear: 2026\nConference Dat

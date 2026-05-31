@@ -71,6 +71,8 @@ window.SITE = {
 
   /* ---------- News (newest first) ---------- */
   news: [
+    { date: `May 2026`, text: `I'll be presenting <a href="https://arxiv.org/abs/2605.07776">Tracing Uncertainty in Language Model “Reasoning”</a> and <a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> at the <a href="https://fdgm-workshop.github.io/FDGM_ICML2026/">FoGen</a> workshop at ICML 2026.` },
+    { date: `May 2026`, text: `<a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> was accepted at the Symposium on Probabilistic Machine Learning (ProbML 2026).` },
     { date: `May 2026`, text: `New preprint — <a href="https://arxiv.org/abs/2605.07776">Tracing Uncertainty in Language Model “Reasoning”</a> is out on arXiv.` },
     { date: `Mar 2026`, text: `New preprint — <a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> is out on arXiv.` },
     { date: `Oct 2025`, text: `Started my PhD with the NLPnorth group at the IT University of Copenhagen.` },
@@ -86,7 +88,7 @@ window.SITE = {
       year: `2026`,
       title: `Tracing Uncertainty in Language Model “Reasoning”`,
       authors: `<strong>Nils Grünefeld</strong>, Bertram Højer, Philipp Mondorf, Barbara Plank, Anna Rogers, Christian Hardmeier, Stefan Heinrich, Jes Frellsen`,
-      venue: `Preprint`,
+      venue: `Preprint, under review`,
       links: [
         { label: `arXiv`, url: `https://arxiv.org/abs/2605.07776` },
         { label: `PDF`, url: `https://arxiv.org/pdf/2605.07776` }
@@ -96,11 +98,10 @@ window.SITE = {
       year: `2026`,
       title: `An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms`,
       authors: `<strong>Nils Grünefeld</strong>, Jes Frellsen, Christian Hardmeier`,
-      venue: `Preprint`,
+      venue: `Symposium on Probabilistic Machine Learning (ProbML 2026)`,
       links: [
         { label: `arXiv`, url: `https://arxiv.org/abs/2603.29466` },
         { label: `PDF`, url: `https://arxiv.org/pdf/2603.29466` },
-        { label: `Code`, url: `https://github.com/ngruenefeld/gradient-uncertainty` }
       ]
     }
   ],

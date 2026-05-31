@@ -5,34 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nils Grünefeld</title>
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f9;
-            /* Light neutral background */
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            /* Clean sans-serif font */
-            color: #333;
-            /* Dark text for good contrast */
-        }
+    <meta name="description"
+        content="Nils Grünefeld — PhD Fellow in Natural Language Processing at the IT University of Copenhagen, working on uncertainty quantification for large language models.">
 
-        .quote {
-            text-align: center;
-            font-size: 2rem;
-            line-height: 1.5;
-            max-width: 80%;
-        }
-    </style>
+    <!-- Open Graph / link previews -->
+    <meta property="og:title" content="Nils Grünefeld">
+    <meta property="og:description"
+        content="PhD Fellow in NLP at ITU Copenhagen — uncertainty quantification for large language models.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://n.grnfld.me/">
+
+    <!-- Inline SVG favicon: a simple "NG" monogram -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231f4e79'/><text x='50' y='69' font-size='50' font-family='Georgia,serif' font-weight='700' fill='white' text-anchor='middle'>NG</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Set the theme before paint to avoid a flash of the wrong color scheme. -->
+    <script>
+        (function () {
+            // Always start in light mode; remember the visitor's manual toggle after that.
+            const saved = localStorage.getItem('theme');
+            document.documentElement.dataset.theme = saved || 'light';
+        })();
+    </script>
 </head>
 
+<!--
+    ============================================================================
+    To update the site, edit  content.js  — that file holds all your text,
+    news, publications and links. You should not need to touch this file.
+    ============================================================================
+-->
+
 <body>
-    <!-- <div class="quote">
-        To love the world so much we think change is possible.
-    </div> -->
+    <!-- Animated background: living node field (random-walking dots + dynamic links). -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- ===================== NAV ===================== -->
+    <header class="nav">
+        <div class="nav__inner">
+            <a class="nav__brand" href="#top">
+                <span class="nav__mark" id="brand-mark"></span>
+                <span class="nav__name" id="brand-name"></span>
+            </a>
+            <nav class="nav__links">
+                <a href="#about">About</a>
+                <a href="#news">News</a>
+                <a href="#publications">Publications</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <span class="theme-toggle__icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===================== HERO ===================== -->
+        <section id="top" class="hero">
+            <div class="hero__text">
+                <p class="hero__eyebrow" id="hero-role"></p>
+                <h1 id="hero-name"></h1>
+                <p class="hero__affil" id="hero-affil"></p>
+                <p class="hero__lead" id="hero-tagline"></p>
+                <ul class="hero__links" id="hero-links"></ul>
+            </div>
+            <div class="avatar" id="avatar" aria-hidden="true"></div>
+        </section>
+
+        <!-- ===================== ABOUT ===================== -->
+        <section id="about" class="section">
+            <h2 class="section__title">About</h2>
+            <div class="card about">
+                <div class="about__text" id="about-text"></div>
+                <aside class="about__side">
+                    <h3>Research interests</h3>
+                    <ul class="chips" id="interests"></ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ===================== NEWS ===================== -->
+        <section id="news" class="section">
+            <h2 class="section__title">News</h2>
+            <div class="card">
+                <ul class="news" id="news-list"></ul>
+            </div>
+        </section>
+
+        <!-- ===================== PUBLICATIONS ===================== -->
+        <section id="publications" class="section">
+            <h2 class="section__title">Publications</h2>
+            <p class="section__note" id="pubs-note"></p>
+            <ol class="pubs" id="pubs"></ol>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year">2026</span> <span id="footer-name"></span></p>
+    </footer>
+
+    <!-- Your content, then the code that renders it. -->
+    <script src="content.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

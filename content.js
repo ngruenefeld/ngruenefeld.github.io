@@ -76,7 +76,7 @@ window.SITE = {
     { date: `May 2026`, text: `New preprint — <a href="https://arxiv.org/abs/2605.07776">Tracing Uncertainty in Language Model “Reasoning”</a> is out on arXiv.` },
     { date: `Mar 2026`, text: `New preprint — <a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> is out on arXiv.` },
     { date: `Oct 2025`, text: `Started my PhD with the NLPnorth group at the IT University of Copenhagen.` },
-    { date: `Sep 2025`, text: `Completed my MSc in Computational Linguistics at LMU Munich, with a thesis titled “Estimating Uncertainty in Natural Language Processing,” supervised by Barbara Plank and Silvia Casola in the MaiNLP group.` },
+    { date: `Sep 2025`, text: `Completed my MSc in Computational Linguistics at LMU Munich, with my thesis titled “Estimating Uncertainty in Natural Language Processing,” supervised by Barbara Plank and Silvia Casola in the MaiNLP group.` },
     { date: `Jun 2025`, text: `Awarded a Danish Data Science Academy PhD fellowship.` }
   ],
 

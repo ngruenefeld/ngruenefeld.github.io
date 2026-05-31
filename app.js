@@ -123,6 +123,12 @@
     const note = $("#pubs-note");
     if (note) { if (S.pubsNote) note.innerHTML = S.pubsNote; else note.style.display = "none"; }
 
+    // Service (hide the whole section if there are no entries)
+    const service = S.service || [];
+    fillHTML("#service-list", service.map((s) => `<li>${s}</li>`).join(""));
+    const serviceSection = $("#service");
+    if (serviceSection && !service.length) serviceSection.style.display = "none";
+
     // Turn the central link shortcuts into real links wherever they appear.
     autoLink($("main"), S.links || {});
   }

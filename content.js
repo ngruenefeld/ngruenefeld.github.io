@@ -52,6 +52,7 @@ window.SITE = {
     "Philipp Mondorf": `https://pmmon.github.io/`,
     "Anna Rogers": `https://annargrs.github.io/`,
     "Stefan Heinrich": `https://stefanheinrich.net/`,
+    "TMLR": `https://jmlr.org/tmlr/`,
   },
 
   /* ---------- About ---------- */
@@ -108,6 +109,13 @@ window.SITE = {
 
   // Small note shown under the "Publications" heading (HTML allowed; leave empty to hide).
   // pubsNote: `See also my <a href="https://arxiv.org/a/grunefeld_n_1">arXiv</a> and <a href="https://scholar.google.com/citations?user=sG390YIAAAAJ&hl=en&oi=ao">Google Scholar</a> profiles.`,
+
+  /* ---------- Service ---------- */
+  // Reviewing, organizing, and committee roles. One entry per line (HTML allowed).
+  // Remove all entries (or leave the list empty) to hide the section entirely.
+  service: [
+    `Reviewer, Transactions on Machine Learning Research (TMLR)`
+  ],
 
   /* ---------- Contact / social links (shown at the top, under your name) ---------- */
   contactLinks: [

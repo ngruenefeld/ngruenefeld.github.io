@@ -14,7 +14,7 @@ window.SITE = {
 
   /* ---------- Header & hero ---------- */
   name: `Nils Grünefeld`,
-  role: `PhD Fellow · Uncertainty Quantification`,
+  role: `DDSA PhD Fellow · Uncertainty Quantification`,
 
   // Optional profile photo. Put an image in this folder (e.g. photo.jpg) and
   // set:  photo: `photo.jpg`   — leave empty to show your initials instead.

@@ -65,10 +65,11 @@ body {
     transition: background 0.25s ease, color 0.25s ease;
 }
 
-/* ===================== ANIMATED BACKGROUND ===================== */
-/* A living node field drawn on a canvas: each dot random-walks around its
-   home position and links to nearby dots, so the grid itself flexes.
-   Colors + motion live in the canvas script near the end of index.html. */
+/* ===================== FIGURE AXIS (canvas) ===================== */
+/* The page is framed as a figure: a vertical axis in the left margin with a
+   column of marginal posteriors hanging off it. It lives in the gutter (never
+   behind the text) and hides on narrow screens. Drawn in setupFigureAxis() in
+   app.js. */
 #bg-canvas {
     position: fixed;
     inset: 0;
@@ -139,7 +140,7 @@ strong {
     place-items: center;
     width: 2rem;
     height: 2rem;
-    border-radius: 7px;
+    border-radius: 0;
     font-family: var(--display);
     font-size: 0.8rem;
     font-weight: 700;
@@ -171,7 +172,7 @@ strong {
 .theme-toggle {
     border: 1px solid var(--border);
     background: var(--surface);
-    border-radius: 11px;
+    border-radius: 0;
     width: 2.3rem;
     height: 2.3rem;
     cursor: pointer;
@@ -217,8 +218,7 @@ main {
 .card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
+    box-shadow: none;
     padding: 1.5rem 1.6rem;
 }
 
@@ -325,7 +325,7 @@ main {
     display: inline-block;
     padding: 0.5rem 1rem;
     border: 1px solid var(--border);
-    border-radius: 11px;
+    border-radius: 0;
     background: var(--surface);
     color: var(--text);
     font-weight: 600;
@@ -343,7 +343,7 @@ main {
     flex: 0 0 auto;
     width: 156px;
     height: 156px;
-    border-radius: 16px;
+    border-radius: 0;
     object-fit: cover;
     display: grid;
     place-items: center;
@@ -352,7 +352,7 @@ main {
     font-size: 2.8rem;
     color: #fff;
     background: var(--accent);
-    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 /* when content.js provides a photo */
@@ -365,7 +365,7 @@ main {
 .btn {
     display: inline-block;
     padding: 0.6rem 1.25rem;
-    border-radius: 9px;
+    border-radius: 0;
     border: 1px solid var(--border);
     background: var(--surface);
     color: var(--text);
@@ -433,7 +433,7 @@ main {
     color: var(--accent);
     background: var(--accent-soft);
     padding: 0.35rem 0.75rem;
-    border-radius: 999px;
+    border-radius: 0;
 }
 
 /* ===================== NEWS ===================== */
@@ -478,13 +478,6 @@ main {
 .pub {
     display: flex;
     gap: 1.4rem;
-    transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-}
-
-.pub:hover {
-    border-color: color-mix(in srgb, var(--accent) 60%, var(--border));
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
 }
 
 .pub__year {
@@ -532,7 +525,7 @@ main {
     font-size: 0.85rem;
     font-weight: 600;
     padding: 0.3rem 0.8rem;
-    border-radius: 10px;
+    border-radius: 0;
     background: var(--surface-2);
     color: var(--accent);
 }
@@ -561,7 +554,7 @@ main {
 .contact__links a {
     display: inline-block;
     padding: 0.55rem 1.1rem;
-    border-radius: 9px;
+    border-radius: 0;
     background: var(--surface-2);
     font-weight: 600;
     font-size: 0.92rem;
@@ -603,6 +596,7 @@ main {
 .footer {
     border-top: 1px solid var(--border);
     margin-top: 1rem;
+    background: var(--surface);   /* solid, so it reads as a bar like the header */
 }
 
 .footer p {
@@ -648,3 +642,5 @@ main {
         gap: 0.4rem;
     }
 }
+
+/* central-body panels: square, flat, no shadow — see .card above */

@@ -171,6 +171,9 @@
     // Navy in light mode, soft blue in dark mode — matches the site accent.
     const rgb = () =>
       document.documentElement.dataset.theme === "dark" ? "143,179,217" : "31,78,121";
+    // axis lines = the figure frame; opaque, matching var(--border) (header/footer)
+    const frame = () =>
+      document.documentElement.dataset.theme === "dark" ? "41,48,58" : "228,230,234";
 
     const hash = (n) => { const x = Math.sin(n * 127.1) * 43758.5453; return x - Math.floor(x); };
     // smooth value noise → organic, non-repetitive GP samples
@@ -223,7 +226,7 @@
       ctx.fillStyle = "rgba(" + c + ",0.09)"; ctx.fill();
       ctx.beginPath();
       pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-      ctx.strokeStyle = "rgba(" + c + ",0.55)"; ctx.lineWidth = 1.4; ctx.stroke();
+      ctx.strokeStyle = "rgba(" + c + ",0.55)"; ctx.lineWidth = 1; ctx.stroke();
       ctx.fillStyle = "rgba(" + c + ",0.7)";
       for (const [x, y] of modes) { ctx.beginPath(); ctx.arc(x, y, 2, 0, Math.PI * 2); ctx.fill(); }
     }
@@ -330,13 +333,17 @@
       const depth = Math.min(gutter - 34, 132);
       const lX = Math.round(gutter - 20), rX = Math.round(w - (gutter - 20));
 
-      ctx.strokeStyle = "rgba(" + c + ",0.4)"; ctx.lineWidth = 1.25;     // the axis lines (kept always)
-      ctx.beginPath(); ctx.moveTo(lX, navH); ctx.lineTo(lX, botY); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(rX, navH); ctx.lineTo(rX, botY); ctx.stroke();
+      const gp = opt.layout === "gp";
+      const axes = () => {                                 // the figure frame, opaque like the borders
+        ctx.strokeStyle = "rgb(" + frame() + ")"; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(lX, navH); ctx.lineTo(lX, botY); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(rX, navH); ctx.lineTo(rX, botY); ctx.stroke();
+      };
+      if (gp) axes();                                      // GP: under, so its observation dots sit on top
 
       ctx.save();
       ctx.beginPath(); ctx.rect(0, navH, w, botY - navH); ctx.clip();   // between header and footer
-      if (opt.layout === "gp") {
+      if (gp) {
         drawGP(lX, -1, depth, c, scrollY, docTop, navH, botY, 0);
         drawGP(rX, 1, depth, c, scrollY, docTop, navH, botY, 100);
       } else {
@@ -346,6 +353,7 @@
         }
       }
       ctx.restore();
+      if (!gp) axes();                                     // bumps: on top, so their ends tuck under the line
     }
     function resize() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);

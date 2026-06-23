@@ -115,6 +115,7 @@ window.SITE = {
   // Reviewing, organizing, and committee roles. One entry per line (HTML allowed).
   // Remove all entries (or leave the list empty) to hide the section entirely.
   service: [
+    `Reviewer, Computational Linguistics`,
     `Reviewer, Transactions on Machine Learning Research (TMLR)`
   ],
 

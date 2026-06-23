@@ -211,15 +211,8 @@
     function drawDist(baseX, sign, depth, c, yc, halfH, shape) {
       const STEP = 3, eff = depth * shape.amp, yLo = yc - halfH, yHi = yc + halfH;
       const nd = (v) => Math.max(0, shape.f(v) - shape.edge) / shape.norm;
-      const pts = [], modes = [];
-      let prev = -1, rising = false;
-      for (let y = yLo; y <= yHi + 0.0001; y += STEP) {
-        const d = nd((y - yc) / halfH);
-        pts.push([baseX + sign * eff * d, y]);
-        if (d > prev) rising = true;
-        else if (d < prev && rising) { modes.push(pts[pts.length - 2]); rising = false; }
-        prev = d;
-      }
+      const pts = [];
+      for (let y = yLo; y <= yHi + 0.0001; y += STEP) pts.push([baseX + sign * eff * nd((y - yc) / halfH), y]);
       ctx.beginPath(); ctx.moveTo(baseX, pts[0][1]);
       for (const [x, y] of pts) ctx.lineTo(x, y);
       ctx.lineTo(baseX, pts[pts.length - 1][1]); ctx.closePath();
@@ -227,8 +220,6 @@
       ctx.beginPath();
       pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
       ctx.strokeStyle = "rgba(" + c + ",0.55)"; ctx.lineWidth = 1; ctx.stroke();
-      ctx.fillStyle = "rgba(" + c + ",0.7)";
-      for (const [x, y] of modes) { ctx.beginPath(); ctx.arc(x, y, 2, 0, Math.PI * 2); ctx.fill(); }
     }
 
     // even / organic / few·large: a column of bumps over the content band

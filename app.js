@@ -72,6 +72,10 @@
     fillText("#footer-name", S.name);
     if (S.name) document.title = S.name;
 
+    // Optional hero motto (hidden when empty)
+    const mottoEl = $("#hero-motto");
+    if (mottoEl) { if (S.motto) mottoEl.textContent = S.motto; else mottoEl.style.display = "none"; }
+
     // Avatar: profile photo if given, otherwise initials
     const avatar = $("#avatar");
     if (avatar) {

@@ -31,6 +31,9 @@ window.SITE = {
   // One-sentence summary shown in the hero (HTML links allowed).
   tagline: `I research <strong>uncertainty quantification in machine learning</strong>, developing efficient methods to quantify predictive uncertainty and turn it into calibrated signals, with a focus on natural language processing.`,
 
+  // A short personal motto, shown quietly in italics in the footer. Leave empty to hide it.
+  motto: `One day I will find the right model, and it will be simple.`,
+
   /* ---------- Link shortcuts -------------------------------------------------
      Any phrase listed here becomes a link automatically, everywhere it appears
      in your text (tagline, about, news, publications) and in the affiliation

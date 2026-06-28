@@ -39,5 +39,5 @@ The site mark is **n̂**: a custom lowercase **n** wearing a small posterior as 
 - **QR codes:** use `favicon.svg` as the centre image — the solid navy square gives the quiet contrast a
   scanner needs. For a light QR, `mark-light.svg` on the code's own white works too.
 
-Locked parameters: long-tail feet (`n.fl = 6`, `n.foot = 63`), tapered hat (`hat.taper = 0.62`),
-edge padding (`pad = 13`).
+Locked parameters: long-tail feet (`n.fl = 6`, `n.foot = 63`), tapered hat (`hat.taper = 0.5`,
+`hat.sig = 7.5`), edge padding (`pad = 10`).

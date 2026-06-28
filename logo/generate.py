@@ -15,7 +15,7 @@ from pathlib import Path
 
 PARAMS = {
     "grid": 120,                       # viewBox is 0 0 grid grid
-    "pad": 13,                         # margin from mark bbox to the square edge (binding dimension)
+    "pad": 10,                         # margin from mark bbox to the square edge (binding dimension)
     "n": {                             # the letter, in grid units
         "B": 90,   "sO": 58, "sI": 60, # baseline; outer / inner archspring heights
         "lO": 36,  "lI": 50,           # left stem: outer / inner x
@@ -26,8 +26,8 @@ PARAMS = {
         "foot": 63,                    # where the flare begins up the stem (lower y = longer sweep)
     },
     "hat": {                           # the posterior, a real Gaussian — drawn as a tapered outline
-        "cx": 60, "sig": 8, "base": 36, "h": 14, "span": 2.5, "samples": 64,
-        "taper": 0.62,                 # inner curve as a fraction of height; ribbon points at the tails
+        "cx": 60, "sig": 7.5, "base": 36, "h": 14, "span": 2.5, "samples": 64,
+        "taper": 0.5,                  # inner curve as a fraction of height; ribbon points at the tails
     },
     "color": {"navy": "#1f4e79", "white": "#ffffff"},
 }

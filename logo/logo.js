@@ -4,9 +4,9 @@
 (function (global) {
   const PARAMS = {
     grid: 120,
-    pad: 13,
+    pad: 10,
     n: { B: 90, sO: 58, sI: 60, lO: 36, lI: 50, rI: 70, rO: 84, aO: 36, aI: 54, kc: 8, fl: 6, foot: 63 },
-    hat: { cx: 60, sig: 8, base: 36, h: 14, span: 2.5, samples: 64, taper: 0.62 },
+    hat: { cx: 60, sig: 7.5, base: 36, h: 14, span: 2.5, samples: 64, taper: 0.5 },
     color: { navy: "#1f4e79", white: "#ffffff" },
   };
 

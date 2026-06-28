@@ -25,8 +25,9 @@ PARAMS = {
         "fl": 6,                       # foot splay — how far the OUTER edge flares
         "foot": 63,                    # where the flare begins up the stem (lower y = longer sweep)
     },
-    "hat": {                           # the posterior, a real Gaussian
+    "hat": {                           # the posterior, a real Gaussian — drawn as a tapered outline
         "cx": 60, "sig": 8, "base": 36, "h": 14, "span": 2.5, "samples": 64,
+        "taper": 0.62,                 # inner curve as a fraction of height; ribbon points at the tails
     },
     "color": {"navy": "#1f4e79", "white": "#ffffff"},
 }
@@ -48,15 +49,17 @@ def n_path(P):
 
 
 def hat_path(P):
-    h = P["hat"]; cx, sig, base, H, span, n = (h["cx"], h["sig"], h["base"], h["h"], h["span"], h["samples"])
-    pts = []
+    """Tapered Gaussian: outer curve out, scaled-down inner curve back — meets to a point at each tail."""
+    h = P["hat"]; cx, sig, base, H, span, n, s = (
+        h["cx"], h["sig"], h["base"], h["h"], h["span"], h["samples"], h["taper"])
+    top, inn = [], []
     for i in range(n + 1):
         x = cx - span * sig + 2 * span * sig * (i / n)
-        z = (x - cx) / sig
-        pts.append((round(x, 2), round(base - H * math.exp(-0.5 * z * z), 2)))
-    d = "M" + " L".join(f"{x} {y}" for x, y in pts)
-    d += f" L{round(cx + span * sig, 2)} {base} L{round(cx - span * sig, 2)} {base} Z"
-    return d
+        e = math.exp(-0.5 * ((x - cx) / sig) ** 2)
+        top.append((round(x, 2), round(base - H * e, 2)))
+        inn.append((round(x, 2), round(base - s * H * e, 2)))
+    return ("M" + " L".join(f"{x} {y}" for x, y in top)
+            + " L" + " L".join(f"{x} {y}" for x, y in reversed(inn)) + " Z")
 
 
 def bbox(P):

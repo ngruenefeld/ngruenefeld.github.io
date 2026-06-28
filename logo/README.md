@@ -8,7 +8,8 @@ The site mark is **n̂**: a custom lowercase **n** wearing a small posterior as 
   letter: a small distribution above, a big implied one below.
 - **The construction.** Everything is drawn on a 120-unit grid from the `PARAMS` block. The `n` is a
   single filled contour (outer edge flares, inner edge stays vertical); the hat is a sampled Gaussian
-  `exp(−z²⁄2)` closed to its baseline. No fonts — the letter is a path.
+  `exp(−z²⁄2)` drawn as a **tapered outline** — an outer curve and a scaled-down inner curve that meet
+  to a sharp point at each tail. No fonts — the letter is a path.
 
 ## Files
 
@@ -38,4 +39,5 @@ The site mark is **n̂**: a custom lowercase **n** wearing a small posterior as 
 - **QR codes:** use `favicon.svg` as the centre image — the solid navy square gives the quiet contrast a
   scanner needs. For a light QR, `mark-light.svg` on the code's own white works too.
 
-Locked parameters (long-tail feet): `n.fl = 6`, `n.foot = 63`.
+Locked parameters: long-tail feet (`n.fl = 6`, `n.foot = 63`), tapered hat (`hat.taper = 0.62`),
+edge padding (`pad = 13`).

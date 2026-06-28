@@ -56,6 +56,7 @@
       <div class="ctrl"><label for="hsig">σ (width)</label><output id="hsig_v"></output><input type="range" id="hsig" min="5" max="14" step="0.5"></div>
       <div class="ctrl"><label for="hbase">baseline (y)</label><output id="hbase_v"></output><input type="range" id="hbase" min="28" max="44" step="1"></div>
       <div class="ctrl"><label for="hgap">μ gap to n</label><output id="hgap_v"></output><input type="range" id="hgap" min="2" max="10" step="0.5"></div>
+      <div class="ctrl"><label for="taper">swell (lower = thicker)</label><output id="taper_v"></output><input type="range" id="taper" min="0.4" max="0.85" step="0.02"></div>
       <h2 style="margin-top:1.3rem">Frame</h2>
       <div class="ctrl"><label for="pad">edge padding</label><output id="pad_v"></output><input type="range" id="pad" min="6" max="32" step="1"></div>
       <button class="btn" id="reset">Reset to locked values</button>
@@ -92,16 +93,16 @@ function build(ui){
   const sw = ui.sw, lO = 60 - ui.wd/2, rO = 60 + ui.wd/2;
   const n = { B:90, sO: ui.xh+12, sI: ui.xh+14, lO, lI: lO+sw, rI: rO-sw, rO,
               aO: ui.xh, aI: ui.xh+10, kc:8, fl: ui.fl, foot: ui.foot };
-  const hat = { cx:60, sig: ui.hsig, base: ui.hbase, h: ui.hh, span:2.5, samples:64 };
+  const hat = { cx:60, sig: ui.hsig, base: ui.hbase, h: ui.hh, span:2.5, samples:64, taper: ui.taper };
   return { grid:120, pad: ui.pad, n, hat, color: LOCK.color };
 }
 const UI = {
   fl: LOCK.n.fl, foot: LOCK.n.foot, sw: LOCK.n.lI - LOCK.n.lO,
   xh: LOCK.n.aO, wd: LOCK.n.rO - LOCK.n.lO,
   hh: LOCK.hat.h, hsig: LOCK.hat.sig, hbase: LOCK.hat.base, hgap: LOCK.hat.base - LOCK.n.aO - 0,
-  pad: LOCK.pad,
+  taper: LOCK.hat.taper, pad: LOCK.pad,
 };
-const ids = ["fl","foot","sw","xh","wd","hh","hsig","hbase","hgap","pad"];
+const ids = ["fl","foot","sw","xh","wd","hh","hsig","hbase","hgap","taper","pad"];
 
 function gridSVG(P){
   let s=`<svg viewBox="0 0 120 120" width="190" height="190" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"><rect width="120" height="120" fill="#fff"/>`;
@@ -128,7 +129,7 @@ for(const k of ids){
 }
 document.getElementById("reset").addEventListener("click",()=>{
   Object.assign(UI,{ fl:LOCK.n.fl, foot:LOCK.n.foot, sw:LOCK.n.lI-LOCK.n.lO, xh:LOCK.n.aO,
-    wd:LOCK.n.rO-LOCK.n.lO, hh:LOCK.hat.h, hsig:LOCK.hat.sig, hbase:LOCK.hat.base, hgap:LOCK.hat.base-LOCK.n.aO, pad:LOCK.pad });
+    wd:LOCK.n.rO-LOCK.n.lO, hh:LOCK.hat.h, hsig:LOCK.hat.sig, hbase:LOCK.hat.base, hgap:LOCK.hat.base-LOCK.n.aO, taper:LOCK.hat.taper, pad:LOCK.pad });
   syncInputs(); render();
 });
 document.getElementById("copy").addEventListener("click",()=>navigator.clipboard.writeText(document.getElementById("out").value));

@@ -6,7 +6,7 @@
     grid: 120,
     pad: 13,
     n: { B: 90, sO: 58, sI: 60, lO: 36, lI: 50, rI: 70, rO: 84, aO: 36, aI: 54, kc: 8, fl: 6, foot: 63 },
-    hat: { cx: 60, sig: 8, base: 36, h: 14, span: 2.5, samples: 64 },
+    hat: { cx: 60, sig: 8, base: 36, h: 14, span: 2.5, samples: 64, taper: 0.62 },
     color: { navy: "#1f4e79", white: "#ffffff" },
   };
 
@@ -29,14 +29,17 @@
       + `L${lI} ${B} Z`;
   }
 
+  // tapered Gaussian: outer curve out, scaled-down inner curve back — points at each tail
   function hatPath(h) {
-    const { cx, sig, base, h: H, span, samples } = h, pts = [];
+    const { cx, sig, base, h: H, span, samples, taper } = h, top = [], inn = [];
     for (let i = 0; i <= samples; i++) {
-      const x = cx - span * sig + 2 * span * sig * (i / samples), z = (x - cx) / sig;
-      pts.push([+x.toFixed(2), +(base - H * Math.exp(-0.5 * z * z)).toFixed(2)]);
+      const x = cx - span * sig + 2 * span * sig * (i / samples);
+      const e = Math.exp(-0.5 * ((x - cx) / sig) ** 2);
+      top.push([+x.toFixed(2), +(base - H * e).toFixed(2)]);
+      inn.push([+x.toFixed(2), +(base - taper * H * e).toFixed(2)]);
     }
-    return "M" + pts.map(p => p[0] + " " + p[1]).join(" L")
-      + ` L${+(cx + span * sig).toFixed(2)} ${base} L${+(cx - span * sig).toFixed(2)} ${base} Z`;
+    return "M" + top.map(p => p[0] + " " + p[1]).join(" L")
+      + " L" + inn.reverse().map(p => p[0] + " " + p[1]).join(" L") + " Z";
   }
 
   // svg({ bg, fg, params, size }) → full SVG markup string

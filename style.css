@@ -136,16 +136,12 @@ strong {
 }
 
 .nav__mark {
-    display: grid;
-    place-items: center;
     width: 2rem;
     height: 2rem;
-    border-radius: 0;
-    font-family: var(--display);
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #fff;
-    background: var(--accent);
+    background-color: var(--accent);
+    background-image: url("logo/mark-dark.svg");   /* the n̂ mark, white on the accent square */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .nav__name {
@@ -618,14 +614,19 @@ main {
 }
 
 /* ===================== RESPONSIVE ===================== */
-@media (max-width: 640px) {
+/* Below 1120px there's no room for the side gutters, so the photo stacks on
+   top and the margin figure turns into a horizontal masthead band (drawn by
+   setupFigureAxis). The extra hero top padding leaves room for that band. */
+@media (max-width: 1119px) {
     .hero {
         flex-direction: column-reverse;
         align-items: flex-start;
         gap: 1.5rem;
-        padding: 2.5rem 0 2rem;
+        padding: 5.5rem 0 2rem;
     }
+}
 
+@media (max-width: 640px) {
     .avatar {
         width: 110px;
         height: 110px;

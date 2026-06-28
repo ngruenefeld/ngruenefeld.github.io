@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>n̂ — logo lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#1f4e79; --ink:#13171d; --soft:#5a6473; --line:#e6e8ec; --paper:#f7f8fa; --grid:#eef1f4; --guideA:#7ea3cc; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; padding:2.4rem clamp(1rem,4vw,3rem); background:var(--paper);
+        font-family:"Plus Jakarta Sans",system-ui,sans-serif; color:var(--ink); }
+  h1{ font-weight:800; font-size:1.45rem; margin:0 0 .3rem; letter-spacing:-.02em; }
+  .sub{ color:var(--soft); margin:0 0 2rem; max-width:70ch; line-height:1.5; }
+  .wrap{ display:grid; grid-template-columns:300px 1fr; gap:1.6rem; align-items:start; }
+  @media (max-width:760px){ .wrap{ grid-template-columns:1fr; } }
+  .panel{ background:#fff; border:1px solid var(--line); padding:1.3rem; }
+  .panel h2{ font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--soft); margin:0 0 1rem; }
+  .ctrl{ display:grid; grid-template-columns:1fr auto; gap:.3rem .6rem; align-items:center; margin-bottom:.7rem; }
+  .ctrl label{ font-size:.82rem; }
+  .ctrl output{ font-variant-numeric:tabular-nums; color:var(--navy); font-weight:600; font-size:.82rem; }
+  .ctrl input[type=range]{ grid-column:1 / -1; width:100%; accent-color:var(--navy); }
+  .stage{ display:flex; flex-wrap:wrap; gap:1.3rem; align-items:flex-start; }
+  .tile{ display:flex; flex-direction:column; gap:.5rem; align-items:center; }
+  .tile small{ color:var(--soft); font-size:.72rem; }
+  .p{ display:grid; place-items:center; width:200px; height:200px; }
+  .p.navy{ background:var(--navy); } .p.white{ background:#fff; border:1px solid var(--line); }
+  .chips{ display:flex; gap:.8rem; align-items:flex-end; }
+  .chips .b{ display:grid; place-items:center; background:var(--navy); }
+  .row{ display:flex; gap:1.3rem; flex-wrap:wrap; margin-top:1.4rem; }
+  textarea{ width:100%; height:120px; font-family:ui-monospace,Menlo,monospace; font-size:.72rem;
+            border:1px solid var(--line); padding:.7rem; resize:vertical; }
+  .btn{ display:inline-block; margin-top:.6rem; padding:.5rem .9rem; background:var(--navy); color:#fff;
+        border:none; font:inherit; font-weight:600; font-size:.82rem; cursor:pointer; }
+  .note{ color:var(--soft); font-size:.78rem; margin:.6rem 0 0; line-height:1.5; }
+  svg{ display:block; }
+</style>
+</head>
+<body>
+  <h1>n̂ — logo lab</h1>
+  <p class="sub">Live refinement of the mark. Drag the parameters; everything re-renders. When you like it,
+     copy the values back into <code>PARAMS</code> in <code>generate.py</code> (and <code>logo.js</code>)
+     and run <code>python3 generate.py</code> to rebuild the assets. The construction tile shows the grid,
+     x-height and σ guides.</p>
+
+  <div class="wrap">
+    <div class="panel">
+      <h2>Letter — n</h2>
+      <div class="ctrl"><label for="fl">foot splay</label><output id="fl_v"></output><input type="range" id="fl" min="0" max="12" step="0.5"></div>
+      <div class="ctrl"><label for="foot">sweep start (y)</label><output id="foot_v"></output><input type="range" id="foot" min="48" max="88" step="1"></div>
+      <div class="ctrl"><label for="sw">stem width</label><output id="sw_v"></output><input type="range" id="sw" min="9" max="20" step="0.5"></div>
+      <div class="ctrl"><label for="xh">x-height top (y)</label><output id="xh_v"></output><input type="range" id="xh" min="34" max="56" step="1"></div>
+      <div class="ctrl"><label for="wd">letter width</label><output id="wd_v"></output><input type="range" id="wd" min="34" max="60" step="1"></div>
+      <h2 style="margin-top:1.3rem">Hat — posterior</h2>
+      <div class="ctrl"><label for="hh">height</label><output id="hh_v"></output><input type="range" id="hh" min="6" max="24" step="1"></div>
+      <div class="ctrl"><label for="hsig">σ (width)</label><output id="hsig_v"></output><input type="range" id="hsig" min="5" max="14" step="0.5"></div>
+      <div class="ctrl"><label for="hbase">baseline (y)</label><output id="hbase_v"></output><input type="range" id="hbase" min="28" max="44" step="1"></div>
+      <div class="ctrl"><label for="hgap">μ gap to n</label><output id="hgap_v"></output><input type="range" id="hgap" min="2" max="10" step="0.5"></div>
+      <h2 style="margin-top:1.3rem">Frame</h2>
+      <div class="ctrl"><label for="pad">edge padding</label><output id="pad_v"></output><input type="range" id="pad" min="6" max="32" step="1"></div>
+      <button class="btn" id="reset">Reset to locked values</button>
+    </div>
+
+    <div class="panel">
+      <h2>Preview</h2>
+      <div class="stage">
+        <div class="tile"><div class="p navy" id="big"></div><small>primary</small></div>
+        <div class="tile"><div class="p white" id="bigw"></div><small>on paper</small></div>
+        <div class="tile"><div class="p white" id="con"></div><small>construction</small></div>
+        <div class="tile"><div class="chips">
+          <div class="b" id="c48" style="width:48px;height:48px"></div>
+          <div class="b" id="c32" style="width:32px;height:32px"></div>
+          <div class="b" id="c16" style="width:16px;height:16px"></div>
+        </div><small>favicon</small></div>
+      </div>
+      <div class="row" style="display:block">
+        <h2>favicon.svg output</h2>
+        <textarea id="out" readonly></textarea>
+        <button class="btn" id="copy">Copy</button>
+        <p class="note">This is the exact markup <code>generate.py</code> writes for <code>favicon.svg</code>
+           (navy ground, white mark). The transparent <code>mark-light.svg</code> / <code>mark-dark.svg</code>
+           drop the background rect.</p>
+      </div>
+    </div>
+  </div>
+
+<script src="logo.js"></script>
+<script>
+const LOCK = JSON.parse(JSON.stringify(Logo.PARAMS));
+// derive editable params -> a full PARAMS object the generator understands
+function build(ui){
+  const sw = ui.sw, lO = 60 - ui.wd/2, rO = 60 + ui.wd/2;
+  const n = { B:90, sO: ui.xh+12, sI: ui.xh+14, lO, lI: lO+sw, rI: rO-sw, rO,
+              aO: ui.xh, aI: ui.xh+10, kc:8, fl: ui.fl, foot: ui.foot };
+  const hat = { cx:60, sig: ui.hsig, base: ui.hbase, h: ui.hh, span:2.5, samples:64 };
+  return { grid:120, pad: ui.pad, n, hat, color: LOCK.color };
+}
+const UI = {
+  fl: LOCK.n.fl, foot: LOCK.n.foot, sw: LOCK.n.lI - LOCK.n.lO,
+  xh: LOCK.n.aO, wd: LOCK.n.rO - LOCK.n.lO,
+  hh: LOCK.hat.h, hsig: LOCK.hat.sig, hbase: LOCK.hat.base, hgap: LOCK.hat.base - LOCK.n.aO - 0,
+  pad: LOCK.pad,
+};
+const ids = ["fl","foot","sw","xh","wd","hh","hsig","hbase","hgap","pad"];
+
+function gridSVG(P){
+  let s=`<svg viewBox="0 0 120 120" width="190" height="190" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"><rect width="120" height="120" fill="#fff"/>`;
+  for(let i=0;i<=120;i+=10) s+=`<line x1="${i}" y1="0" x2="${i}" y2="120" stroke="#eef1f4"/><line x1="0" y1="${i}" x2="120" y2="${i}" stroke="#eef1f4"/>`;
+  for(const y of [P.n.B,P.n.sO,P.n.aO,P.hat.base,P.hat.base-P.hat.h]) s+=`<line x1="12" y1="${y}" x2="108" y2="${y}" stroke="#bcccde" stroke-dasharray="2 3"/>`;
+  for(const x of [P.n.lO,P.n.lI,P.n.rI,P.n.rO,60]) s+=`<line x1="${x}" y1="16" x2="${x}" y2="${P.n.B}" stroke="#bcccde" stroke-dasharray="2 3"/>`;
+  const raw=Object.assign({},P,{pad:null});   // construction guides are in raw coords → draw mark unfitted
+  s+=Logo.svg({params:raw,fg:"#13171d22",size:120}).replace(/^<svg[^>]*>|<\/svg>$/g,"");
+  return s+"</svg>";
+}
+function render(){
+  const P = build(UI);
+  document.getElementById("big").innerHTML  = Logo.svg({params:P, bg:P.color.navy, fg:"#fff", size:190});
+  document.getElementById("bigw").innerHTML = Logo.svg({params:P, fg:P.color.navy, size:190});
+  document.getElementById("con").innerHTML  = gridSVG(P);
+  for(const s of [48,32,16]) document.getElementById("c"+s).innerHTML = Logo.svg({params:P, bg:P.color.navy, fg:"#fff", size:s});
+  document.getElementById("out").value = Logo.svg({params:P, bg:P.color.navy, fg:"#fff", size:120}).replace("><title","" + ">\n  <title").replace(/><path/g,">\n  <path").replace(/><\/svg>/,">\n</svg>");
+  for(const k of ids){ const o=document.getElementById(k+"_v"); if(o) o.textContent = UI[k]; }
+}
+function syncInputs(){ for(const k of ids){ const el=document.getElementById(k); if(el){ el.value=UI[k]; } } }
+for(const k of ids){
+  const el=document.getElementById(k);
+  el.addEventListener("input",()=>{ UI[k]=+el.value; if(k==="hgap"){ UI.hbase = UI.xh + UI.hgap; } render(); syncInputs(); });
+}
+document.getElementById("reset").addEventListener("click",()=>{
+  Object.assign(UI,{ fl:LOCK.n.fl, foot:LOCK.n.foot, sw:LOCK.n.lI-LOCK.n.lO, xh:LOCK.n.aO,
+    wd:LOCK.n.rO-LOCK.n.lO, hh:LOCK.hat.h, hsig:LOCK.hat.sig, hbase:LOCK.hat.base, hgap:LOCK.hat.base-LOCK.n.aO, pad:LOCK.pad });
+  syncInputs(); render();
+});
+document.getElementById("copy").addEventListener("click",()=>navigator.clipboard.writeText(document.getElementById("out").value));
+syncInputs(); render();
+</script>
+</body>
+</html>

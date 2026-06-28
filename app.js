@@ -60,11 +60,8 @@
   /* ----------------------------------------------------- render content.js */
   function renderContent() {
     const S = window.SITE || {};
-    const initials = (S.name || "")
-      .trim().split(/\s+/).map((w) => w[0] || "").slice(0, 2).join("").toUpperCase();
 
-    // Header / hero / footer text
-    fillText("#brand-mark", initials);
+    // Header / hero / footer text (the brand mark is the n̂ logo, set in CSS)
     fillText("#brand-name", S.name);
     fillText("#hero-name", S.name);
     fillText("#hero-role", S.role);
@@ -240,6 +237,28 @@
       return out;
     }
 
+    // horizontal masthead band (mobile): a row of posteriors across the content width
+    function placementsH(xLeft, xRight) {
+      const sp = 132, out = [], band = Math.max(1, xRight - xLeft);
+      const n = Math.max(1, Math.round(band / sp)), s = band / n;
+      for (let i = 0; i < n; i++) out.push({ xc: xLeft + s * (i + 0.5), halfW: s * 1.05, si: i % POOL.length });
+      return out;
+    }
+    // a marginal posterior growing out of a horizontal axis at baseY (drawDist, transposed)
+    function drawDistH(baseY, sign, depth, c, xc, halfW, shape) {
+      const STEP = 3, eff = depth * shape.amp, xLo = xc - halfW, xHi = xc + halfW;
+      const nd = (v) => Math.max(0, shape.f(v) - shape.edge) / shape.norm;
+      const pts = [];
+      for (let x = xLo; x <= xHi + 0.0001; x += STEP) pts.push([x, baseY + sign * eff * nd((x - xc) / halfW)]);
+      ctx.beginPath(); ctx.moveTo(pts[0][0], baseY);
+      for (const [x, y] of pts) ctx.lineTo(x, y);
+      ctx.lineTo(pts[pts.length - 1][0], baseY); ctx.closePath();
+      ctx.fillStyle = "rgba(" + c + ",0.09)"; ctx.fill();
+      ctx.beginPath();
+      pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
+      ctx.strokeStyle = "rgba(" + c + ",0.55)"; ctx.lineWidth = 1; ctx.stroke();
+    }
+
     // gp: an actual GP posterior growing out of the axis (which is the mean, 0).
     // The ±σ band is the real posterior std from an RBF kernel — smooth, with
     // rounded waists at the (fixed, non-uniformly spaced) observations thanks to a
@@ -314,7 +333,6 @@
     function render() {
       ctx.clearRect(0, 0, w, h);
       const gutter = (w - 880) / 2;
-      if (gutter < 120) return;                          // margins too narrow → no figure
       const scrollY = window.scrollY || 0;
       const nav = document.querySelector(".nav");
       const main = document.querySelector("main");
@@ -325,9 +343,27 @@
       const botY = footer ? Math.min(h, footer.getBoundingClientRect().top) : h;
       if (botY <= navH) return;
       const c = rgb();
+      // Below 1120px there's no room for side gutters, so the figure turns 90°:
+      // a single horizontal band of posteriors growing down from an axis just
+      // under the nav — a masthead that sits in the hero's top padding.
+      if (gutter < 120) {
+        const mr = main ? main.getBoundingClientRect() : { top: navH, left: 0, right: w };
+        const yAxis = mr.top + 16;                          // a touch below the nav border
+        if (yAxis >= botY || botY - navH < 60) return;
+        const xL = mr.left + 24, xR = mr.right - 24, hDepth = 56;   // span the content's text width
+        if (xR - xL < 40) return;
+        ctx.save();
+        ctx.beginPath(); ctx.rect(0, navH, w, botY - navH); ctx.clip();
+        for (const p of placementsH(xL, xR)) drawDistH(yAxis, 1, hDepth, c, p.xc, p.halfW, POOL[p.si % POOL.length]);
+        ctx.restore();
+        ctx.strokeStyle = "rgb(" + frame() + ")"; ctx.lineWidth = 1;   // axis on top, ends tuck under
+        ctx.beginPath(); ctx.moveTo(xL, yAxis); ctx.lineTo(xR, yAxis); ctx.stroke();
+        return;
+      }
+
+      // Wide screens: vertical sidebars living in the page gutters.
       const depth = Math.min(gutter - 34, 132);
       const lX = Math.round(gutter - 20), rX = Math.round(w - (gutter - 20));
-
       const gp = opt.layout === "gp";
       const axes = () => {                                 // the figure frame, opaque like the borders
         ctx.strokeStyle = "rgb(" + frame() + ")"; ctx.lineWidth = 1;

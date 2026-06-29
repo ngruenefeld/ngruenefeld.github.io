@@ -348,16 +348,14 @@
       // under the nav — a masthead that sits in the hero's top padding.
       if (gutter < 120) {
         const mr = main ? main.getBoundingClientRect() : { top: navH, left: 0, right: w };
-        const yAxis = mr.top + 16;                          // a touch below the nav border
-        if (yAxis >= botY || botY - navH < 60) return;
-        const xL = mr.left + 24, xR = mr.right - 24, hDepth = 56;   // span the content's text width
-        if (xR - xL < 40) return;
+        const yAxis = mr.top;                               // grow straight from the header line — no gap.
+        if (yAxis >= botY || botY - navH < 60) return;      // anchored to the page, so it scrolls up under the
+        const xL = mr.left + 24, xR = mr.right - 24, hDepth = 56;   // nav rather than following it. Clipped at
+        if (xR - xL < 40) return;                                   // navH, so the header's own border caps it.
         ctx.save();
         ctx.beginPath(); ctx.rect(0, navH, w, botY - navH); ctx.clip();
         for (const p of placementsH(xL, xR)) drawDistH(yAxis, 1, hDepth, c, p.xc, p.halfW, POOL[p.si % POOL.length]);
         ctx.restore();
-        ctx.strokeStyle = "rgb(" + frame() + ")"; ctx.lineWidth = 1;   // axis on top, ends tuck under
-        ctx.beginPath(); ctx.moveTo(xL, yAxis); ctx.lineTo(xR, yAxis); ctx.stroke();
         return;
       }
 

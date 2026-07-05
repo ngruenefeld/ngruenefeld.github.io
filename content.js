@@ -75,6 +75,7 @@ window.SITE = {
 
   /* ---------- News (newest first) ---------- */
   news: [
+    { date: `Jun 2026`, text: `<a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> received the Best Paper Award at the Symposium on Probabilistic Machine Learning (ProbML 2026).` },
     { date: `Jun 2026`, text: `<a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> was selected for an oral presentation at the Symposium on Probabilistic Machine Learning (ProbML 2026).` },
     { date: `May 2026`, text: `I'll be presenting <a href="https://arxiv.org/abs/2605.07776">Tracing Uncertainty in Language Model “Reasoning”</a> and <a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> at the <a href="https://fdgm-workshop.github.io/FDGM_ICML2026/">FoGen</a> workshop at ICML 2026.` },
     { date: `May 2026`, text: `<a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> was accepted at the Symposium on Probabilistic Machine Learning (ProbML 2026).` },
@@ -103,7 +104,7 @@ window.SITE = {
       year: `2026`,
       title: `An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms`,
       authors: `<strong>Nils Grünefeld</strong>, Jes Frellsen, Christian Hardmeier`,
-      venue: `Symposium on Probabilistic Machine Learning (ProbML 2026)`,
+      venue: `Symposium on Probabilistic Machine Learning (ProbML 2026) · Best Paper Award`,
       links: [
         { label: `arXiv`, url: `https://arxiv.org/abs/2603.29466` },
         { label: `PDF`, url: `https://arxiv.org/pdf/2603.29466` },

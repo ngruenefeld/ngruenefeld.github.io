@@ -75,6 +75,10 @@ window.SITE = {
 
   /* ---------- News (newest first) ---------- */
   news: [
+    { date: `Nov 2026`, text: `I'll be giving an invited talk on explaining data influence by uncertainty reduction at the Mathematical Data Science group, University of Vienna.` },
+    { date: `Nov 2026`, text: `I'll be giving a guest lecture on uncertainty in LLM reasoning in the MSc seminar <em>Reasoning in Large Language Models</em> at LMU Munich.` },
+    { date: `Sep 2026`, text: `<a href="https://proceedings.mlr.press/v327/grunefeld26a.html">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> is now published in the Proceedings of the 1st Symposium on Probabilistic Machine Learning (PMLR 327).` },
+    { date: `Sep 2026`, text: `I gave an invited talk on <a href="https://proceedings.mlr.press/v327/grunefeld26a.html">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> in Andrés Masegosa's group at Aalborg University Copenhagen.` },
     { date: `Jul 2026`, text: `<a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> received the Best Paper Award at the Symposium on Probabilistic Machine Learning (ProbML 2026).` },
     { date: `Jun 2026`, text: `<a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> was selected for an oral presentation at the Symposium on Probabilistic Machine Learning (ProbML 2026).` },
     { date: `May 2026`, text: `I'll be presenting <a href="https://arxiv.org/abs/2605.07776">Tracing Uncertainty in Language Model “Reasoning”</a> and <a href="https://arxiv.org/abs/2603.29466">An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms</a> at the <a href="https://fdgm-workshop.github.io/FDGM_ICML2026/">FoGen</a> workshop at ICML 2026.` },
@@ -104,10 +108,11 @@ window.SITE = {
       year: `2026`,
       title: `An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms`,
       authors: `<strong>Nils Grünefeld</strong>, Jes Frellsen, Christian Hardmeier`,
-      venue: `Symposium on Probabilistic Machine Learning (ProbML 2026) · Best Paper Award`,
+      venue: `Proceedings of the 1st Symposium on Probabilistic Machine Learning (ProbML 2026), PMLR 327:86–118 · Best Paper Award`,
       links: [
+        { label: `Proceedings`, url: `https://proceedings.mlr.press/v327/grunefeld26a.html` },
+        { label: `PDF`, url: `https://raw.githubusercontent.com/mlresearch/v327/main/assets/grunefeld26a/grunefeld26a.pdf` },
         { label: `arXiv`, url: `https://arxiv.org/abs/2603.29466` },
-        { label: `PDF`, url: `https://arxiv.org/pdf/2603.29466` },
       ]
     }
   ],

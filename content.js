@@ -126,6 +126,7 @@ window.SITE = {
   /* ---------- Contact / social links (shown at the top, under your name) ---------- */
   contactLinks: [
     { label: `Email`, url: `mailto:nilgr@itu.dk` },
+    { label: `CV`, url: `cv/cv.pdf` },
     { label: `Google Scholar`, url: `https://scholar.google.com/citations?user=sG390YIAAAAJ&hl=en&oi=ao` },
     { label: `GitHub`, url: `https://github.com/ngruenefeld` },
     { label: `LinkedIn`, url: `https://www.linkedin.com/in/ngruenefeld/` },

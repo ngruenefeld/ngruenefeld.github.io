@@ -1,0 +1,286 @@
+%!TEX TS-program = lualatex
+%-------------------------------------------------------------------------------
+%  Curriculum Vitae — Nils Grünefeld
+%  Built on Awesome-CV (https://github.com/posquit0/Awesome-CV), class file
+%  vendored as awesome-cv.cls. LuaLaTeX only.
+%
+%  Build:   cd cv && latexmk        (latexmkrc selects LuaLaTeX; writes cv.pdf)
+%-------------------------------------------------------------------------------
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Page geometry
+\geometry{left=1.6cm, top=1.0cm, right=1.6cm, bottom=1.8cm, footskip=.6cm}
+
+% One restrained accent: the website's navy (--accent on n.grnfld.me)
+\definecolor{awesome-navy}{HTML}{1F4E79}
+\colorlet{awesome}{awesome-navy}
+\setbool{acvSectionColorHighlight}{false}   % plain section titles
+\usepackage{needspace}                      % keep section headings with their first entry
+\let\acvOrigSection\cvsection
+\renewcommand{\cvsection}[1]{\Needspace*{4cm}\acvOrigSection{#1}}
+
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+% Awesome-CV's one-line tables (honors, talks, schools) give the right-hand
+% location column only 2.5cm; widen it so "City, Country" fits on one line.
+\renewenvironment{cvhonors}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2mm}
+  \begin{center}
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.8cm} R{3.3cm}}
+}{%
+    \end{tabular*}
+  \end{center}
+}
+
+%-------------------------------------------------------------------------------
+%  Personal information
+%-------------------------------------------------------------------------------
+\name{Nils}{Grünefeld}
+\position{PhD Fellow{\enskip\cdotp\enskip}Uncertainty Quantification in Machine Learning}
+\address{NLPnorth, IT University of Copenhagen{\enskip\cdotp\enskip}Copenhagen, Denmark}
+\mobile{(+45) 50 12 12 82}
+\email{nilgr@itu.dk}
+\homepage{n.grnfld.me}
+\github{ngruenefeld}
+\linkedin{ngruenefeld}
+\googlescholar{sG390YIAAAAJ}{}
+
+\begin{document}
+\makecvheader[C]
+\makecvfooter
+  {\today}
+  {Nils~Grünefeld~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+%===============================================================================
+\cvsection{Education}
+\begin{cventries}
+  \cventry
+    {PhD in Data Science}
+    {IT University of Copenhagen}
+    {Copenhagen, Denmark}
+    {Oct. 2025 -- Present}
+    {
+      \begin{cvitems}
+        \item {Thesis: \emph{Efficient Gradient-Based Uncertainty Quantification using Language Perturbation}.}
+        \item {Supervised by Christian~Hardmeier and Jes~Frellsen. NLPnorth group; affiliated with the Pioneer Centre for AI.}
+        \item {Funded by a Danish Data Science Academy (DDSA) PhD Fellowship.}
+      \end{cvitems}
+    }
+  \cventry
+    {MSc in Computational Linguistics}
+    {Ludwig Maximilian University of Munich}
+    {Munich, Germany}
+    {2023 -- 2025}
+    {
+      \begin{cvitems}
+        \item {Thesis: \emph{Estimating Uncertainty in Natural Language Processing}, supervised by Barbara~Plank and Silvia~Casola (MaiNLP).}
+      \end{cvitems}
+    }
+  \cventry
+    {MSc in Computer Science}
+    {Leibniz University Hannover}
+    {Hannover, Germany}
+    {2022 -- 2023}
+    {
+      \begin{cvitems}
+        \item {Transferred to the MSc in Computational Linguistics at LMU Munich after one semester.}
+      \end{cvitems}
+    }
+  \cventry
+    {BSc in Computer Science}
+    {Leibniz University Hannover}
+    {Hannover, Germany}
+    {2014 -- 2022}
+    {
+      \begin{cvitems}
+        \item {Thesis: \emph{Explaining and Applying Graph Neural Networks on Text}, supervised by Avishek~Anand and Thorben~Funke.}
+      \end{cvitems}
+    }
+\end{cventries}
+
+%===============================================================================
+\cvsection{Publications}
+\par
+\begin{cvparagraph}
+  $^{*}$\,Equal contribution.
+\end{cvparagraph}
+\cvsubsection{Peer-Reviewed}
+\begin{cventries}
+  \cventry
+    {\textbf{Nils~Grünefeld}, Jes~Frellsen, Christian~Hardmeier}
+    {\href{https://proceedings.mlr.press/v327/grunefeld26a.html}{An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms}}
+    {ProbML 2026{\enskip\cdotp\enskip}Best Paper Award}
+    {2026}
+    {
+      \begin{cvitems}
+        \item {Proceedings of the 1st Symposium on Probabilistic Machine Learning, PMLR 327:86--118. Oral presentation; also presented as a poster at the FoGen Workshop, ICML 2026.}
+      \end{cvitems}
+    }
+\end{cventries}
+\cvsubsection{Under Review}
+\begin{cventries}
+  \cventry
+    {Johannes~Gabriel~Sindlinger$^{*}$, \textbf{Nils~Grünefeld}$^{*}$, Anna~Rogers, Jes~Frellsen, Christian~Hardmeier}
+    {Separating Ambiguity from Ignorance: Explaining Data Influence by Uncertainty~Reduction}
+    {Under review{\enskip\cdotp\enskip}AISTATS 2027}
+    {2026}
+    {}
+  \vspace{2.5mm}
+  \cventry
+    {\textbf{Nils~Grünefeld}$^{*}$, Bertram~Højer$^{*}$, Philipp~Mondorf, Barbara~Plank, Anna~Rogers, Christian~Hardmeier, Stefan~Heinrich, Jes~Frellsen}
+    {\href{https://arxiv.org/abs/2605.07776}{Tracing Uncertainty in Language Model ``Reasoning''}}
+    {Under review{\enskip\cdotp\enskip}ICLR 2027}
+    {2026}
+    {
+      \begin{cvitems}
+        \item {arXiv:2605.07776. Presented as a poster at the FoGen Workshop, ICML 2026.}
+      \end{cvitems}
+    }
+\end{cventries}
+\cvsubsection{In Preparation}
+\begin{cventries}
+  \cventry
+    {\textbf{Nils~Grünefeld}, Mattes~Ruckdeschel, Silvia~Casola, Marco~Stranisci, Anna~Rogers, Barbara~Plank, Jes~Frellsen, Christian~Hardmeier}
+    {How do LLMs learn and express different perspectives?}
+    {}
+    {2026}
+    {}
+\end{cventries}
+
+%===============================================================================
+\cvsection{Honors \& Awards}
+\begin{cvhonors}
+  \cvhonor
+    {Best Paper Award}
+    {ProbML 2026}
+    {Seoul, South Korea}
+    {2026}
+  \cvhonor
+    {PhD Fellowship}
+    {Danish Data Science Academy (DDSA)}
+    {Denmark}
+    {2025}
+\end{cvhonors}
+
+%===============================================================================
+\cvsection{Talks}
+\begin{cventries}
+  \cventry
+    {Invited Talk{\enskip\cdotp\enskip}Mathematical Data Science group, University of Vienna}
+    {Separating Ambiguity from Ignorance: Explaining Data Influence by Uncertainty~Reduction}
+    {Vienna, Austria}
+    {Nov. 2026}
+    {}
+  \vspace{2.5mm}
+  \cventry
+    {Invited Talk{\enskip\cdotp\enskip}Andrés~Masegosa's group, Aalborg University Copenhagen}
+    {An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms}
+    {Copenhagen, Denmark}
+    {Sep. 2026}
+    {}
+  \vspace{2.5mm}
+  \cventry
+    {Oral{\enskip\cdotp\enskip}ProbML 2026}
+    {An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms}
+    {Seoul, South Korea}
+    {Jul. 2026}
+    {}
+\end{cventries}
+
+%===============================================================================
+\cvsection{Experience}
+\begin{cventries}
+  \cventry
+    {Data Scientist}
+    {the peak lab.}
+    {Oldenburg, Germany}
+    {2022 -- 2025}
+    {
+      \begin{cvitems}
+        \item {Analyzed complex data sets using statistical methods and machine learning to extract insights, inform decisions, and develop data-driven products and solutions.}
+        \item {Designed and implemented a standardized process for data science projects.}
+        \item {Implemented a company-wide focus on explainability in machine learning solutions.}
+        \item {Designed and implemented machine learning solutions for major company clients, including text classification for \mbox{business product categorization} and time-series-based predictive maintenance modeling.}
+      \end{cvitems}
+    }
+\end{cventries}
+
+%===============================================================================
+\cvsection{Teaching \& Supervision}
+\begin{cventries}
+  \cventry
+    {Guest Lecture: Uncertainty in LLM Reasoning}
+    {Reasoning in Large Language Models (MSc seminar)}
+    {LMU Munich}
+    {Autumn 2026}
+    {}
+  \vspace{2.5mm}
+  \cventry
+    {Lecturer}
+    {Advanced Natural Language Processing (MSc course)}
+    {IT University of Copenhagen}
+    {Autumn 2026}
+    {}
+  \vspace{2.5mm}
+  \cventry
+    {Co-Supervisor (with Christian~Hardmeier)}
+    {Uncertainty Communication in LLMs: Can Fine-tuning Improve Calibration in Question~Answering? (BSc thesis)}
+    {IT University of Copenhagen}
+    {Spring 2026}
+    {}
+  \vspace{2.5mm}
+  \cventry
+    {Teaching Assistant}
+    {Programming I \& II (BSc courses)}
+    {Leibniz University Hannover}
+    {2016 -- 2021}
+    {}
+\end{cventries}
+
+%===============================================================================
+\cvsection{Academic Service}
+\begin{cvskills}
+  \cvskill
+    {Reviewing}
+    {Computational Linguistics (MIT Press){\enskip\cdotp\enskip}Transactions on Machine Learning Research (TMLR)}
+\end{cvskills}
+
+%===============================================================================
+\cvsection{Summer \& Winter Schools}
+\begin{cvhonors}
+  \cvhonor
+    {Machine Learning Summer School (MLSS)}
+    {}
+    {New York City, USA}
+    {2026}
+  \cvhonor
+    {Circle U, NLPL \& OpenEuroLLM Winter School on Multilinguality in LLMs}
+    {}
+    {Skeikampen, Norway}
+    {2026}
+  \cvhonor
+    {Athens Natural Language Processing Summer School}
+    {}
+    {Athens, Greece}
+    {2024}
+\end{cvhonors}
+
+%===============================================================================
+\cvsection{Skills}
+\begin{cvskills}
+  \cvskill
+    {Programming}
+    {Python, Java, C, R, Bash, Git, \LaTeX}
+  \cvskill
+    {Frameworks}
+    {PyTorch, Hugging Face Transformers, Pyro, (Py)Stan, scikit-learn, NumPy, SciPy, pandas, Matplotlib}
+  \cvskill
+    {Languages}
+    {German (native), English (fluent), French (basic)}
+\end{cvskills}
+
+\end{document}

@@ -1,53 +1,51 @@
 # n.grnfld.me
 
-Personal website for Nils Grünefeld. Plain HTML/CSS/JS — no build step, no
-dependencies. Hosted on GitHub Pages.
+Source for [n.grnfld.me](https://n.grnfld.me) — the personal academic website
+and CV of Nils Grünefeld (PhD fellow, NLPnorth / IT University of Copenhagen;
+uncertainty quantification in machine learning). Published with GitHub Pages
+from `main`.
 
-## Updating the site
+## Layout
 
-**Edit [`content.js`](content.js) — that's the only file you need to touch.**
+| Path | What it is |
+|------|------------|
+| `index.html`, `style.css`, `app.js` | The site. Plain HTML/CSS/JS — no build step, no dependencies. `app.js` renders the content, handles the theme toggle, and draws the background: a figure axis in each margin with marginal posteriors growing out of it (a horizontal masthead band on narrow screens). |
+| `content.js` | All site content — bio, news, publications, service, links. Editing guide: [`docs/editing.md`](docs/editing.md). |
+| `cv/` | The CV. `cv.tex` on [Awesome-CV](https://github.com/posquit0/Awesome-CV) (class vendored as `awesome-cv.cls`), built with LuaLaTeX. `cv.pdf` is committed and served at [`/cv/cv.pdf`](https://n.grnfld.me/cv/cv.pdf). |
+| `logo/` | The n̂ mark used as favicon and nav mark. `generate.py` holds the parameters and writes the SVGs; `lab.html` is a live refinement tool. See [`logo/README.md`](logo/README.md). |
+| `CNAME` | Custom domain for GitHub Pages. |
+| `nlpnorth_deadlines.ics` | Conference-deadline calendar, refreshed by an automated weekly commit. Unrelated to the site. |
 
-It holds all the text: your name, bio, research interests, news, publications,
-and links. Each item has comments explaining what it is. To update:
+## Site
 
-1. Open `content.js`.
-2. Change the text between the backticks `` `like this` ``.
-   - **Recurring links** (people, groups, institutions) are handled centrally:
-     add the phrase + URL once to the `links` map, then just write the phrase
-     in your text — every occurrence is linked automatically and stays
-     consistent. No `<a>` tags needed for those.
-   - One-off links inside text: `<a href="https://...">link text</a>`
-   - To add a news item or paper, copy an existing `{ ... }` block, paste it,
-     and edit it. Keep the commas between blocks. Newest news goes at the top.
-3. Save, then commit and push:
-   ```
-   git add content.js
-   git commit -m "Update content"
-   git push
-   ```
-   GitHub Pages republishes the site within a minute or two.
+Preview locally by opening `index.html` in a browser; there is nothing to
+install or run. Pushing to `main` publishes the site within a minute or two.
 
-To preview locally before pushing, just open `index.html` in your browser.
+## CV
 
-### Adding a photo
+Requires a full TeX Live (2026 recommended) with `lualatex`, `latexmk`,
+`fontawesome6`, and the Source Sans 3 and Roboto font packages — all included
+in a standard full installation.
 
-- Drop an image in this folder (e.g. `photo.jpg`) and set
-  `photo: \`photo.jpg\`` in `content.js`. Leave it empty to show your initials.
+```
+cd cv && latexmk && latexmk -c
+```
 
-### Contact / social links
+`latexmkrc` selects LuaLaTeX; `-c` removes the auxiliary files. Commit both
+`cv.tex` and the regenerated `cv.pdf`.
 
-The links shown at the top of the page (under your name) come from the
-`contactLinks` list in `content.js`. Add, remove, or reorder them there.
+## Logo
 
-## The other files (you usually won't touch these)
+```
+python3 logo/generate.py
+```
 
-| File         | What it does                                              |
-|--------------|-----------------------------------------------------------|
-| `content.js` | **Your content.** Edit this.                              |
-| `index.html` | Page structure / skeleton.                                |
-| `style.css`  | All styling (colors, fonts, layout, dark mode).           |
-| `app.js`     | Renders `content.js`, theme toggle, animated background.  |
-| `CNAME`      | Custom domain (`n.grnfld.me`). Don't change.              |
+rebuilds `favicon.svg`, `mark-light.svg` and `mark-dark.svg` from the
+parameters in `generate.py` (mirrored in `logo.js` for the lab).
 
-The animated background and conference-deadline calendar (`nlpnorth_deadlines.ics`)
-are unrelated to your page content.
+## Credits
+
+- CV template: [Awesome-CV](https://github.com/posquit0/Awesome-CV) by Claud D.
+  Park and contributors, LaTeX Project Public License 1.3c. Fonts Source Sans 3
+  (Adobe) and Roboto (Google) via TeX Live.
+- Site fonts: Plus Jakarta Sans and Inter via Google Fonts.
